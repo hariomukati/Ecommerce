@@ -40,7 +40,6 @@ INDEX VERSION 1.131+F:\Online Garments and deal in Spring mvc\.metadata\.plugins
 2131177208.index
 3957130484.index
 1992607317.index
-175139432.index
 1129328086.index
 2292192583.index
 2378194619.index
