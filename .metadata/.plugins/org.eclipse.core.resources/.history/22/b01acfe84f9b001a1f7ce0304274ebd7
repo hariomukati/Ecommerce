@@ -1,0 +1,7 @@
+package in.co.ecommerce.service;
+
+public interface UserServiceInt {
+
+	
+	
+}

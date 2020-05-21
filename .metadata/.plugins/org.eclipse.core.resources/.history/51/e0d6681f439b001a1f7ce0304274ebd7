@@ -1,0 +1,38 @@
+package in.co.ecommerce.config;
+
+import java.util.logging.Logger;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+@EnableTransactionManagement
+@ComponentScan("in.co.ecommerce")
+@PropertySource({"classpath:persistence-mysql.properties"})
+public class EcommerceConfigration implements WebMvcConfigurer{
+
+	private Logger log=Logger.getLogger(getClass().getName());
+	
+	@Autowired
+	private Environment env;
+	
+	public DataSource getHibDataSourse() {
+		log.info("GetHibDataSourse method start");
+		
+		
+		log.info("GetHibDataSourse method end");
+		return null;
+	}
+	
+	
+	
+}

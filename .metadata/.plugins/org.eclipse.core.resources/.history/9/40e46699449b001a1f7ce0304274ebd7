@@ -1,0 +1,68 @@
+package in.co.ecommerce.config;
+
+import java.beans.PropertyVetoException;
+import java.util.Properties;
+import java.util.logging.Logger;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextException;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+import in.co.ecommerce.util.DataUtility;
+
+@Configuration
+@EnableWebMvc
+@EnableTransactionManagement
+@ComponentScan("in.co.ecommerce")
+@PropertySource({"classpath:persistence-mysql.properties"})
+public class EcommerceConfigration implements WebMvcConfigurer{
+
+	private Logger log=Logger.getLogger(getClass().getName());
+	
+	@Autowired
+	private Environment env;
+	
+	@Bean
+	public DataSource getHibDataSourse() {
+		log.info("GetHibDataSourse method start");
+		ComboPooledDataSource cpds=new ComboPooledDataSource();
+		try {
+			cpds.setDriverClass("com.mysql.jdbc.Driver");
+			cpds.setJdbcUrl(env.getProperty("jdbc.url"));
+			cpds.setUser(env.getProperty("jdbc.user"));
+			cpds.setPassword(env.getProperty("jdbc.password"));
+			cpds.setInitialPoolSize(DataUtility.getInt("connection.pool.initialPoolSize"));
+			cpds.setMinPoolSize(DataUtility.getInt("connection.pool.minPoolSize"));
+			cpds.setMaxPoolSize(DataUtility.getInt("connection.pool.maxPoolSize"));		
+			cpds.setMaxIdleTime(DataUtility.getInt("connection.pool.maxIdleTime"));
+		} catch (PropertyVetoException e) {
+			e.printStackTrace();
+			throw new ApplicationContextException("Exception in GetHibDataSourse "+e.getMessage());
+		}
+		log.info("GetHibDataSourse method end");
+		return cpds;
+	}
+	
+
+	private Properties getHibernateProperties() {
+		log.info("getHibernatePropertirs method start");
+		
+			Properties prop=new Properties();
+			props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
+			props.setProperty("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+		log.info("getHibernateProperies method end");
+		return null;
+	}
+	
+}

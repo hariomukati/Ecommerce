@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+F:\Online Garments and deal in Spring mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2388001654.index
+\Ecommerce\src\main\java
+F:\Online Garments and deal in Spring mvc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1052715090.index
+\Ecommerce\src\main\resources

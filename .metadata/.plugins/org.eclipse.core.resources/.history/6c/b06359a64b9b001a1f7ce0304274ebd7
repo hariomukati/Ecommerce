@@ -1,0 +1,63 @@
+package in.co.ecommerce.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+import in.co.ecommerce.entity.UserEntity;
+
+@Repository
+public class UserDAOimpl implements UserDAOInt {
+
+	private SessionFactory sessionFactory
+	
+	@Override
+	public long add(UserEntity bean) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(UserEntity bean) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(UserEntity bean) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public UserEntity findByLogin(String login) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserEntity findByPk(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserEntity> search(UserEntity bean, long pageNo, int pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserEntity> search(UserEntity bean) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserEntity authenticate(UserEntity bean) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

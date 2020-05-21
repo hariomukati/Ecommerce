@@ -1,0 +1,16 @@
+package in.co.ecommerce.dao;
+
+import in.co.ecommerce.entity.UserEntity;
+
+public interface UserDAOInt {
+
+	public long add(UserEntity dto);
+	public void update(UserDTO dto);
+	public void delete(UserDTO dto);
+	public UserDTO findByLogin(String login);
+	public UserDTO findByPk(long id);
+	public List<UserDTO> search(UserDTO dto, long pageNo, int pageSize);
+	public List<UserDTO> search(UserDTO dto);
+	public UserDTO authenticate(UserDTO dto);
+	
+}

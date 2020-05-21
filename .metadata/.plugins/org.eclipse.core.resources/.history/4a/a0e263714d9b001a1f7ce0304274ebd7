@@ -1,0 +1,90 @@
+package in.co.ecommerce.dao;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import in.co.ecommerce.entity.UserEntity;
+
+@Repository
+public class UserDAOimpl implements UserDAOInt {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	private Logger log=Logger.getLogger(getClass().getName());
+	
+	@Override
+	public long add(UserEntity bean) {
+		log.info("UserDAOImpl  add method start");
+			Session session=sessionFactory.getCurrentSession();
+			long pk=(long)session.save(bean);
+		log.info("UserDAOImpl  add method end");	
+		return pk;
+	}
+
+	@Override
+	public void update(UserEntity bean) {
+		log.info("UserDAOImpl  update method start");
+			sessionFactory.getCurrentSession().merge(bean);
+		log.info("UserDAOImpl  update method end");
+	}
+
+	@Override
+	public void delete(UserEntity bean) {
+		log.info("UserDAOImpl  delete method start");
+			sessionFactory.getCurrentSession().delete(bean);
+		log.info("UserDAOImpl  delete method end");
+	}
+
+	@Override
+	public UserEntity findByLogin(String login) {
+		log.info("UserDAOImpl  login method start");
+			Session session=sessionFactory.getCurrentSession();
+			Criteria criteria=session.createCriteria(UserEntity.class);
+			criteria.add(Restrictions.eq("loginId", login));
+		log.info("UserDAOImpl  login method end");
+		return (UserEntity)criteria.uniqueResult();
+	}
+
+	@Override
+	public UserEntity findByPk(long id) {
+		log.info("UserDAOImpl  add method start");
+			Session session=sessionFactory.getCurrentSession();
+			Criteria criteria=session.createCriteria(UserEntity.class);
+			criteria.add(Restrictions.eq("loginId", login));
+		log.info("UserDAOImpl  add method start");
+		return null;
+	}
+
+	@Override
+	public List<UserEntity> search(UserEntity bean, long pageNo, int pageSize) {
+		log.info("UserDAOImpl  add method start");
+		
+		log.info("UserDAOImpl  add method start");
+		return null;
+	}
+
+	@Override
+	public List<UserEntity> search(UserEntity bean) {
+		log.info("UserDAOImpl  add method start");
+		
+		log.info("UserDAOImpl  add method start");
+		return null;
+	}
+
+	@Override
+	public UserEntity authenticate(UserEntity bean) {
+		log.info("UserDAOImpl  add method start");
+		
+		log.info("UserDAOImpl  add method start");
+		return null;
+	}
+
+}

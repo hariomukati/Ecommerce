@@ -1,0 +1,9 @@
+package in.co.ecommerce.entity;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class BaseEntity {
+
+	
+}

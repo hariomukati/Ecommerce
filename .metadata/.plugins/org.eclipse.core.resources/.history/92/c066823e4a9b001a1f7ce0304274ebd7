@@ -1,0 +1,33 @@
+package in.co.ecommerce.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="E_USER")
+public class UserEntity extends BaseEntity {
+
+	@Column(name="FIRST_NAME" ,length = 225)
+	private String firstName;
+	@Column(name="LAST_NAME" ,length = 225)
+	private String lastName;
+	private String LOGINId;
+	private String password;
+	private String mobileNo;
+	private long roleId;
+	
+	
+	@Override
+	public String getKey() {
+		// TODO Auto-generated method stub
+		return String.valueOf(id);
+	}
+
+	@Override
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return firstName+" "+lastName;
+	}
+
+}

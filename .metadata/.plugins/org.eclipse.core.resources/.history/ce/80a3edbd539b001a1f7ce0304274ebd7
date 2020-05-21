@@ -1,0 +1,21 @@
+package in.co.ecommerce.form;
+
+import in.co.ecommerce.entity.BaseEntity;
+
+public class UserForm extends BaseForm {
+
+	
+	
+	@Override
+	public BaseEntity getBean() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void populate(BaseEntity bean) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

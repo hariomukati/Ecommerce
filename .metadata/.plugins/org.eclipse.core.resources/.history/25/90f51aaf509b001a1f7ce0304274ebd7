@@ -1,0 +1,105 @@
+package in.co.ecommerce.service;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.co.ecommerce.dao.UserDAOInt;
+import in.co.ecommerce.dao.UserDAOimpl;
+import in.co.ecommerce.entity.UserEntity;
+import in.co.ecommerce.exception.DuplicateRecordException;
+
+@Service
+public class UserServiceImpl implements UserServiceInt {
+
+	private Logger log=Logger.getLogger(getClass().getName());
+	
+	@Autowired
+	private UserDAOInt dao;
+	
+	@Override
+	public long add(UserEntity bean) throws DuplicateRecordException {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return 0;
+	}
+
+	@Override
+	public void delete(UserEntity bean) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+	}
+
+	@Override
+	public void update(UserEntity bean) throws DuplicateRecordException {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		
+	}
+
+	@Override
+	public UserEntity findByPK(long pk) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return null;
+	}
+
+	@Override
+	public UserEntity findByLogin(String login) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return null;
+	}
+
+	@Override
+	public List<UserEntity> search(UserEntity bean) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return null;
+	}
+
+	@Override
+	public List search(UserEntity bean, int pageNo, int pageSize) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return null;
+	}
+
+	@Override
+	public boolean changePassword(Long id, String oldPassword, String newPassword) {
+		log.info("UserServiceImpl  search method start");
+
+		log.info("UserServiceImpl search method end");
+		return false;
+	}
+
+	@Override
+	public UserEntity authenticate(UserEntity bean) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long registerUser(UserEntity bean) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean forgetPassword(String login) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	
+}

@@ -1,0 +1,24 @@
+package in.co.ecommerce.entity;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class BaseEntity implements DropdownList,Comparable<BaseEntity> {
+
+	
+	private long id;
+	
+	private String createdBy;
+	
+	private String modifiedBy;
+	
+	
+	
+
+	@Override
+	public int compareTo(BaseEntity o) {
+		return getValue().compareTo(o.getValue());
+	}
+
+	
+}

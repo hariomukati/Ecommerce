@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+F:\Online Garments and deal in Spring mvc\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1060587390.index
+175139432.index
+664599864.index
+2388001654.index
+3866690870.index
+4056222696.index
+2171533953.index
