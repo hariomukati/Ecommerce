@@ -43,6 +43,7 @@ public class EcommerceConfigration implements WebMvcConfigurer{
 	public DataSource getHibDataSourse() {
 		log.info("GetHibDataSourse method start");
 		ComboPooledDataSource cpds=new ComboPooledDataSource();
+		//testing
 		try {
 			cpds.setDriverClass("com.mysql.jdbc.Driver");
 			cpds.setJdbcUrl(env.getProperty("jdbc.url"));
